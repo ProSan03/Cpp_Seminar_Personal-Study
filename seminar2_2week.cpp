@@ -4,26 +4,30 @@ using namespace std;
 
 
 class Item{
-	public: Item(){
-			itemName = "null";
-			Price = 0;
-	}
+int Price;
+string itemName;
+
+public: 
+
+Item(){
+	itemName = "null";
+	Price = 0;
+}
 	
-		string itemName;
-		int Price;
+		
 };
 
 
 int main(){
 	Item item; 
-	cout << item.itemName << endl;
-	cout << item.Price << endl;
+	cout << item.itemName << endl; // null ì¶œë ¥
+	cout << item.Price << endl; // 0 ì¶œë ¥
 
 
 	cout << endl << endl;
 
-	item.itemName = "¹«ÇÑÀÇ ´ë°Ë";
-	item.Price = 3400;
+	item.itemName = "deathCap";
+	item.Price = 3400; 
 	cout << item.itemName << endl;
 	cout << item.Price << endl;
 	return 0;
