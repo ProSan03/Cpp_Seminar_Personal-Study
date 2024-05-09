@@ -1,1 +1,2 @@
-# c-seminar
+# Cpp-Seminar
+# 동아리 C++ 세미나와 개인적으로 C++ 공부한거 모아둔거임
