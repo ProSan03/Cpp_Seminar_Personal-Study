@@ -14,7 +14,7 @@ public:
 	Person(int id, string name, double weight);
 };
 
-// »ý¼ºÀÚ Áßº¹ ÀÛ¼º½Ã{Person Å¬·¡½º¿¡¼­ »ý¼ºÀÚ Person(), Person(int id, string name) ÁÖ¼® Ã³¸® ÇØÁ¦ÇÒ °Í!)}
+// ìƒì„±ìž ì¤‘ë³µ ìž‘ì„±ì‹œ{Person í´ëž˜ìŠ¤ì—ì„œ ìƒì„±ìž Person(), Person(int id, string name) ì£¼ì„ ì²˜ë¦¬ í•´ì œí•  ê²ƒ!)}
 //Person::Person(){
 //	this->id = 1;
 //	this->name = "Grace";
@@ -33,7 +33,7 @@ public:
 //	this->weight = weight;
 //}
 
-// µðÆúÆ® ¸Å°³ º¯¼ö »ý¼ºÀÚ ÀÛ¼º½Ã
+// ë””í´íŠ¸ ë§¤ê°œ ë³€ìˆ˜ ìƒì„±ìž ìž‘ì„±ì‹œ
 Person::Person(int id = 1, string name = "Grace", double weight = 20.5){
 	this->id = id;
 	this->name = name;
