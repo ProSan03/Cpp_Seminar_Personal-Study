@@ -4,81 +4,101 @@
 using namespace std;
 
 
-class Book{
+class Book {
 private:
 	string title;
 	int price, pages;
 public:
-	Book(string title = "", int price = 0, int pages = 0){
+	Book(string title = "", int price = 0, int pages = 0) {
 		this->title = title;
 		this->price = price;
 		this->pages = pages;
 	}
 
-	void show(){
-		cout << title << ' ' << price << "¿ø " << pages << " ÆäÀÌÁö" << endl;
+	void show() {
+		cout << title << ' ' << price << "ì› " << pages << " í˜ì´ì§€" << endl;
 	}
 
-	string getTitle(){
+	string getTitle() {
 		return title;
 	}
 
-	// Å¬·¡½º ¸â¹ö ÇÔ¼ö·Î È£Ãâ ½Ã
+	// í´ë˜ìŠ¤ ë©¤ë²„ í•¨ìˆ˜ë¡œ í˜¸ì¶œ ì‹œ
 
-	bool operator == (int a);
+	bool operator == (int op2);
 	bool operator == (string op2);
+	bool operator == (Book op2);
+	
+	// í´ë˜ìŠ¤ ì™¸ë¶€ í•¨ìˆ˜ë¡œ í˜¸ì¶œ ì‹œ
+	
+	/*friend bool operator == (Book& op1, int op2);
+	friend bool operator == (Book &op1, string op2);
+	friend bool operator == (Book &op1, Book &op2);*/
+	
 };
 
 
-	// Å¬·¡½º ¿ÜºÎ ÇÔ¼ö·Î È£Ãâ ½Ã
-	/*
-	friend Book &operator += (Book &op1, int op2); // °´Ã¼ opÀÇ ÂüÁ¶ °ª ´øÁö±â
-	friend Book &operator -= (Book &op1, int op2);
-
-	*/
-
-	// Å¬·¡½º ¸â¹ö ÇÔ¼ö·Î È£Ãâ½Ã
-
-	bool Book::operator == (int a){
-		if (this->price == a)
-			return true;
-		else
-			return false;
-	}
-
-	bool Book::operator == (string op2){
-		if (this->getTitle() == op2)
-			return true;
-		else
-			return false;
-	}
-
-
-	// Å¬·¡½º ¿ÜºÎ ÇÔ¼ö·Î È£Ãâ ½Ã
-	/*
-	Book &operator==(Book &op1, int op2) {
-	op1.price = op1.price + op2;
-	return op1;
-	}
-
-	Book &operator-=(Book &op1, int op2) {
-	op1.price = op1.price - op2;
-	return op1;
-	}
-	*/
 
 
 
-int main(){
-	Book a("¸íÇ° C++", 30000, 500), b("°íÇ° C++", 30000, 500);
+
+// í´ë˜ìŠ¤ ë©¤ë²„ í•¨ìˆ˜ë¡œ í˜¸ì¶œì‹œ
+
+bool Book::operator == (int op2) {
+	if (this->price == op2)
+		return true;
+	else
+		return false;
+}
+
+bool Book::operator == (string op2) {
+	if (this->getTitle() == op2)
+		return true;
+	else
+		return false;
+}
+
+bool Book::operator== (Book op2) {
+	if (this->getTitle() == op2.getTitle())
+		return true;
+	else
+		return false;
+}
+
+// í´ë˜ìŠ¤ ì™¸ë¶€ í•¨ìˆ˜ë¡œ í˜¸ì¶œ ì‹œ
+
+//bool operator == (Book& op1, int op2) {
+//	if (op1.price == op2)
+//		return true;
+//	else
+//		return false;
+//}	
+//
+//bool operator == (Book & op1, string op2) {
+//	if (op1.getTitle() == op2)
+//		return true;
+//	else
+//		return false;
+//}
+//
+//bool operator == (Book& op1, Book& op2) {
+//	if (op1.getTitle() == op2.getTitle())
+//		return true;
+//	else
+//		return false;
+//}
+
+
+int main() {
+	Book a("ëª…í’ˆ C++", 30000, 500), b("ê³ í’ˆ C++", 30000, 500);
 	if (a == 30000)
-		cout << "Á¤°¡ 30000¿ø " << endl;
+		cout << "ì •ê°€ 30000ì› " << endl;
 
-	if (a == "¸íÇ° C++")
-		cout << "¸íÇ° C++ ÀÔ´Ï´Ù." << endl;
+	if (a == "ëª…í’ˆ C++")
+		cout << "ëª…í’ˆ C++ ì…ë‹ˆë‹¤." << endl;
 
-	//if (a == b)
-	//	cout << "µÎ Ã¥Àº °°Àº Ã¥ÀÔ´Ï´Ù." << endl\
+	if (a == b)
+		cout << "ë‘ ì±…ì€ ê°™ì€ ì±…ì…ë‹ˆë‹¤." << endl; // ì •ìƒì ìœ¼ë¡œ ì½”ë“œ ì§°ìœ¼ë©´ a, bì˜ string ê°’ì´ ë‹¤ë¥´ë©´ ì¶œë ¥ ë˜ì§€ ì•ŠëŠ” ì½”ë“œ
 
 
 	return 0;
