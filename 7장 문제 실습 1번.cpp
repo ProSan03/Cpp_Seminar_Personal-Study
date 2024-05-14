@@ -16,32 +16,32 @@ public:
 	}
 
 	void show(){
-		cout << title << ' ' << price << "¿ø " << pages << " ÆäÀÌÁö" << endl;
+		cout << title << ' ' << price << "ì› " << pages << " í˜ì´ì§€" << endl;
 	}
 
 	string getTitle(){
 		return title;
 	}
 
-	// Å¬·¡½º ¸â¹ö ÇÔ¼ö·Î È£Ãâ ½Ã
+	// í´ë˜ìŠ¤ ë©¤ë²„ í•¨ìˆ˜ë¡œ í˜¸ì¶œ ì‹œ
 	/*
 	Book &operator +=(int a);
 	Book &operator -=(int a);
 	*/
 
-	// Å¬·¡½º ¿ÜºÎ ÇÔ¼ö·Î È£Ãâ ½Ã
-	friend Book &operator += (Book &op1, int op2); // °´Ã¼ opÀÇ ÂüÁ¶ °ª ´øÁö±â
+	// í´ë˜ìŠ¤ ì™¸ë¶€ í•¨ìˆ˜ë¡œ í˜¸ì¶œ ì‹œ
+	friend Book &operator += (Book &op1, int op2); // ê°ì²´ opì˜ ì°¸ì¡° ê°’ ë˜ì§€ê¸°
 	friend Book &operator -= (Book &op1, int op2);
 };
 
-// Å¬·¡½º ¸â¹ö ÇÔ¼ö·Î È£Ãâ½Ã
+// í´ë˜ìŠ¤ ë©¤ë²„ í•¨ìˆ˜ë¡œ í˜¸ì¶œì‹œ
 /*
-Book &Book::operator += (int a){ // ¹«Á¶°Ç °´Ã¼ ÀÚ½Å¿¡ ÀÇÇÑ ÂüÁ¶·Î ¸®ÅÏÇØ¾ßÇÔ
+Book &Book::operator += (int a){ // ë¬´ì¡°ê±´ ê°ì²´ ìì‹ ì— ì˜í•œ ì°¸ì¡°ë¡œ ë¦¬í„´í•´ì•¼í•¨
 	price = this->price + a;
 	return *this;
 };
 
-Book& Book::operator -= (int a){ // ¹«Á¶°Ç °´Ã¼ ÀÚ½Å¿¡ ÀÇÇÑ ÂüÁ¶·Î ¸®ÅÏÇØ¾ßÇÔ
+Book& Book::operator -= (int a){ // ë¬´ì¡°ê±´ ê°ì²´ ìì‹ ì— ì˜í•œ ì°¸ì¡°ë¡œ ë¦¬í„´í•´ì•¼í•¨
 	
 	price = this->price - a;
 	return *this;
@@ -49,7 +49,7 @@ Book& Book::operator -= (int a){ // ¹«Á¶°Ç °´Ã¼ ÀÚ½Å¿¡ ÀÇÇÑ ÂüÁ¶·Î ¸®ÅÏÇØ¾ßÇÔ
 */
 
 
-// Å¬·¡½º ¿ÜºÎ ÇÔ¼ö·Î È£Ãâ ½Ã
+// í´ë˜ìŠ¤ ì™¸ë¶€ í•¨ìˆ˜ë¡œ í˜¸ì¶œ ì‹œ
 Book &operator+=(Book &op1, int op2) {
 	op1.price = op1.price + op2;
 	return op1;
@@ -61,8 +61,8 @@ Book &operator-=(Book &op1, int op2) {
 }
 
 int main(){
-	Book a("Ã»Ãá", 20000, 300), b("°íÇ° C++ ", 30000, 500);
-	a += 500; // *ÁÖÀÇ) '+=' ¿¬»êÀÚ´Â ¹İµå½Ã ÂüÁ¶·Î ¸®ÅÏ ÇØ¾ßÇÑ´Ù.
+	Book a("ì²­ì¶˜", 20000, 300), b("ê³ í’ˆ C++ ", 30000, 500);
+	a += 500; // *ì£¼ì˜) '+=' ì—°ì‚°ìëŠ” ë°˜ë“œì‹œ ì°¸ì¡°ë¡œ ë¦¬í„´ í•´ì•¼í•œë‹¤.
 	b -= 500;
 	a.show();
 	b.show();
