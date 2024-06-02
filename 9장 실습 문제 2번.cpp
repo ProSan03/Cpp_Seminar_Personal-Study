@@ -7,9 +7,9 @@ class Converter {
 protected:
 	double ratio;
 	double km;
-	virtual double convert(double km) = 0; //src¸¦ ´Ù¸¥ ´ÜÀ§·Î º¯È¯ÇÑ´Ù.
-	virtual string getSourceString() = 0; // src ´ÜÀ§ ¸íÄª
-	virtual string getDestString() = 0; // dest ´ÜÀ§ ¸íÄª
+	virtual double convert(double km) = 0; //srcë¥¼ ë‹¤ë¥¸ ë‹¨ìœ„ë¡œ ë³€í™˜í•œë‹¤.
+	virtual string getSourceString() = 0; // src ë‹¨ìœ„ ëª…ì¹­
+	virtual string getDestString() = 0; // dest ë‹¨ìœ„ ëª…ì¹­
 
 public:
 	Converter() {
@@ -22,10 +22,10 @@ public:
 
 	void run() {
 		double src;
-		cout << getSourceString() << "À» " << getDestString() << "À¸·Î ¹Ù²ß´Ï´Ù. " << endl;
-		cout << getSourceString() << "À» ÀÔ·ÂÇÏ¼¼¿ä: ";
+		cout << getSourceString() << "ì„ " << getDestString() << "ìœ¼ë¡œ ë°”ê¿‰ë‹ˆë‹¤. " << endl;
+		cout << getSourceString() << "ì„ ìž…ë ¥í•˜ì„¸ìš”: ";
 		cin >> src;
-		cout << "º¯È¯ °á°ú : " << convert(src) << getDestString() << endl;
+		cout << "ë³€í™˜ ê²°ê³¼ : " << convert(src) << getDestString() << endl;
 	}
 
 };
@@ -58,10 +58,10 @@ public:
 
 	void run() {
 		double src;
-		cout << getSourceString() << "À» " << getDestString() << "·Î ¹Ù²ß´Ï´Ù. KmÀ» ÀÔ·ÂÇÏ¼¼¿ä" << endl;
-		cout << getSourceString() << "À» ÀÔ·ÂÇÏ¼¼¿ä: ";
+		cout << getSourceString() << "ì„ " << getDestString() << "ë¡œ ë°”ê¿‰ë‹ˆë‹¤. Kmì„ ìž…ë ¥í•˜ì„¸ìš”" << endl;
+		cout << getSourceString() << "ì„ ìž…ë ¥í•˜ì„¸ìš”: ";
 		cin >> src;
-		cout << "º¯È¯ °á°ú : " << convert(src) << getDestString() << endl;
+		cout << "ë³€í™˜ ê²°ê³¼ : " << convert(src) << getDestString() << endl;
 	}
 };
 
